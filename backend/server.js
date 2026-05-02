@@ -9,8 +9,12 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
-app.use(express.json());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://team-task-manager-ecru.vercel.app/'  ],
+  credentials: true
+}));app.use(express.json());
 
 app.use('/api/auth', require('./routes/authRoutes.js'));
 app.use('/api/projects', require('./routes/projectRoutes.js'));
