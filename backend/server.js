@@ -12,7 +12,9 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://team-task-manager-ecru.vercel.app/'  ],
+    'https://team-task-manager-ecru.vercel.app/',
+    'https://team-task-manager-production-5985.up.railway.app',
+  ],
   credentials: true
 }));app.use(express.json());
 
